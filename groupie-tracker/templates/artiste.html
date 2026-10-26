@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{.Nom}} - Groupie Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <a class="retour" href="/">&larr; Retour à la liste</a>
+
+    <div class="detail">
+        <img src="{{.Image}}" alt="{{.Nom}}">
+        <h1>{{.Nom}}</h1>
+        <p>Création : {{.DateCreation}}</p>
+        <p>Premier album : {{.PremierAlbum}}</p>
+
+        <h2>Membres</h2>
+        <ul>
+            {{range .Membres}}<li>{{.}}</li>{{end}}
+        </ul>
+
+        <h2>Concerts</h2>
+        <ul>
+            {{range $lieu, $dates := .DatesLieux}}
+            <li>{{$lieu}} : {{range $dates}}{{.}} {{end}}</li>
+            {{end}}
+        </ul>
+    </div>
+</body>
+</html>

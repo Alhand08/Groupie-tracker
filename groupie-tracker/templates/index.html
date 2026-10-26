@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Groupie Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Groupie Tracker</h1>
+    <div class="grille">
+        {{range .}}
+        <a class="carte" href="/artiste?id={{.ID}}">
+            <img src="{{.Image}}" alt="{{.Nom}}">
+            <h2>{{.Nom}}</h2>
+        </a>
+        {{end}}
+    </div>
+</body>
+</html>
